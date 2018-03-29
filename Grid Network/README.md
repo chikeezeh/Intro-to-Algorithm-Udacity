@@ -4,17 +4,18 @@ A Grid network consist of vertices(nodes) that are connected in the form of a re
 grid.
 
 ### Implementation
-
+The Grid network is also implemented as a dictionary of dictionary, with the outer
+key as the main nodes, and the inner keys showing the nodes that are interconnected.
 
 ### Example
 
-0---1
-|   |
-3---2
-
-We start at 0 and form a chain to the adjacent number which is 1, all the way to
-4 then back to 0 to complete the ring.
-This can be represented by a dictionary of dictionary as shown below:
-{0: {1: '--', 4: '--'}, 1: {0: '--', 2: '--'}, 2: {1: '--', 3: '--'}, 3: {2: '--', 4: '--'}, 4: {0: '--', 3: '--'}}
-
-The '--' shows the connection of a node to another node
+0---1---2
+|   |   |
+7---8---3
+|   |   |
+6---5---4
+The above is a 9 node grid.
+The number of edges for a square grid, i.e n = perfect square;
+```
+E = 2*sqrt(n)*(sqrt(n)-1)
+```
